@@ -111,6 +111,16 @@ export function ThemeProvider({ children }) {
     } catch {}
     return null
   })
+  const [sidebarPosition, setSidebarPosition] = useState(() => {
+    try {
+      const saved = localStorage.getItem(LS_KEY)
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        return parsed.sidebarPosition || 'left'
+      }
+    } catch {}
+    return 'left'
+  })
 
   const theme = THEMES[currentTheme] || THEMES[DEFAULT_THEME]
   const activeAccent = customAccent || theme.accent
@@ -128,8 +138,9 @@ export function ThemeProvider({ children }) {
     localStorage.setItem(LS_KEY, JSON.stringify({
       name: currentTheme,
       customAccent: customAccent,
+      sidebarPosition: sidebarPosition
     }))
-  }, [currentTheme, customAccent, theme, activeAccent])
+  }, [currentTheme, customAccent, theme, activeAccent, sidebarPosition])
 
   const switchTheme = (themeName) => {
     setCurrentTheme(themeName)
@@ -145,8 +156,10 @@ export function ThemeProvider({ children }) {
       currentTheme,
       theme,
       activeAccent,
+      sidebarPosition,
       switchTheme,
       setAccent,
+      setSidebarPosition,
       themes: THEMES,
     }}>
       {children}

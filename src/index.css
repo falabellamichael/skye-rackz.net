@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bg-color: #000000;
   --text-primary: #ffffff;
   --text-accent: #FF007F; /* Neon Pink */
   --font-family: 'Inter', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
@@ -15,6 +25,7 @@ body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 #root {

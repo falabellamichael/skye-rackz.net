@@ -1,4 +1,5 @@
 import React from 'react'
+import useBgFit from '../hooks/useBgFit'
 
 const services = [
   {
@@ -40,8 +41,14 @@ const services = [
 ]
 
 function Bookings() {
+  const bgRef = useBgFit('/backgrounds/bookings-bg.jpg')
+
   return (
-    <div className="page-container bookings-page">
+    <div
+      ref={bgRef}
+      className="page-container bookings-page"
+      style={{ '--bg-image': 'url(/backgrounds/bookings-bg.jpg)' }}
+    >
       <h1 className="page-header">BOOKINGS</h1>
       <p className="bookings-subtitle">Select a service to get started</p>
 
