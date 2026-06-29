@@ -1654,6 +1654,11 @@ body.video-fullscreen-open .main-viewport {
   padding: var(--vibes-editor-edge);
 }
 
+.page-transition-wrapper > .vibes-page,
+.page-transition-wrapper > .vibes-page > * {
+  animation: none;
+}
+
 .vibes-file-input {
   display: none;
 }
@@ -2879,6 +2884,373 @@ body.video-fullscreen-open .main-viewport {
     padding: 0.5rem;
   }
 
+}
+
+@media (max-width: 760px) {
+  .vibes-page {
+    --vibes-editor-edge: 0.3rem;
+  }
+
+  .vibes-editor {
+    top: calc(env(safe-area-inset-top, 0px) + var(--vibes-editor-edge));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--vibes-editor-edge));
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .vibes-tool-rail {
+    gap: 0.42rem;
+    padding: 0.45rem 0.28rem;
+  }
+
+  .vibes-rail-mark,
+  .vibes-tool-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+  }
+
+  .vibes-tool-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .vibes-command-bar {
+    gap: 0.5rem;
+    padding: 0.55rem 0.6rem 0.5rem;
+  }
+
+  .vibes-command-bar h1 {
+    font-size: clamp(1.35rem, 8vw, 1.75rem);
+  }
+
+  .vibes-command-bar span {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.64rem;
+    line-height: 1.25;
+  }
+
+  .vibes-command-actions {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.35rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vibes-command-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vibes-command,
+  .vibes-icon-command {
+    min-height: 32px;
+    border-radius: 7px;
+    flex: 0 0 auto;
+    gap: 0.3rem;
+    padding: 0 0.55rem;
+    font-size: 0.64rem;
+    white-space: nowrap;
+  }
+
+  .vibes-icon-command {
+    width: 32px;
+    min-width: 32px;
+    padding: 0;
+  }
+
+  .vibes-command svg,
+  .vibes-icon-command svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+  }
+
+  .vibes-main-stage {
+    grid-template-rows: minmax(0, 1fr) minmax(174px, 34%);
+  }
+
+  .vibes-canvas-meta {
+    padding: 0.42rem 0.55rem;
+    font-size: 0.64rem;
+  }
+
+  .vibes-canvas-frame {
+    padding: 0.35rem;
+  }
+
+  .vibes-canvas {
+    max-width: calc(100% - 0.35rem);
+    max-height: calc(100% - 0.35rem);
+  }
+
+  .vibes-zoom-bar {
+    grid-template-columns: 32px minmax(74px, 1fr) 32px;
+    gap: 0.42rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .vibes-zoom-bar button {
+    width: 32px;
+    height: 30px;
+    border-radius: 7px;
+  }
+
+  .vibes-panel-head,
+  .vibes-history-head {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.66rem;
+  }
+
+  .vibes-tabs button {
+    min-height: 36px;
+    gap: 0.25rem;
+    font-size: 0.64rem;
+  }
+
+  .vibes-control-list,
+  .vibes-channel-panel,
+  .vibes-curve-panel,
+  .vibes-grade-panel,
+  .vibes-mask-panel,
+  .vibes-retouch-panel,
+  .vibes-layer-panel,
+  .vibes-info-panel,
+  .vibes-transform-panel,
+  .vibes-export-panel {
+    gap: 0.62rem;
+    padding: 0.62rem;
+  }
+
+  .vibes-slider-row {
+    gap: 0.32rem;
+  }
+
+  .vibes-slider-row span,
+  .vibes-slider-row strong {
+    font-size: 0.68rem;
+  }
+
+  .vibes-filmstrip {
+    gap: 0.42rem;
+    padding: 0.5rem;
+  }
+
+  .vibes-filmstrip button {
+    width: 66px;
+    height: 44px;
+    border-radius: 7px;
+  }
+
+  .vibes-import-tile {
+    font-size: 0.54rem;
+  }
+
+  .vibes-import-tile svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 700px) {
+  .vibes-page {
+    --vibes-editor-edge: 0.3rem;
+  }
+
+  .vibes-editor {
+    top: calc(env(safe-area-inset-top, 0px) + var(--vibes-editor-edge));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--vibes-editor-edge));
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .vibes-tool-rail {
+    gap: 0.32rem;
+    padding: 0.32rem 0.24rem;
+  }
+
+  .vibes-rail-mark,
+  .vibes-tool-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+  }
+
+  .vibes-tool-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .vibes-command-bar {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.55rem;
+  }
+
+  .vibes-command-bar > div:first-child {
+    flex: 0 1 190px;
+    min-width: 104px;
+  }
+
+  .vibes-command-bar h1 {
+    font-size: clamp(1rem, 5vh, 1.35rem);
+  }
+
+  .vibes-command-bar span {
+    display: block;
+    max-height: 2.3em;
+    overflow: hidden;
+    font-size: 0.58rem;
+    line-height: 1.15;
+  }
+
+  .vibes-command-actions {
+    flex: 1 1 auto;
+    width: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vibes-command-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vibes-command,
+  .vibes-icon-command {
+    min-height: 30px;
+    flex: 0 0 auto;
+    gap: 0.25rem;
+    padding: 0 0.45rem;
+    font-size: 0.6rem;
+    white-space: nowrap;
+  }
+
+  .vibes-icon-command {
+    width: 30px;
+    min-width: 30px;
+    padding: 0;
+  }
+
+  .vibes-command svg,
+  .vibes-icon-command svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+  }
+
+  .vibes-main-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 32vw);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .vibes-inspector {
+    border-top: none;
+    border-left: 1px solid color-mix(in srgb, var(--text-accent) 16%, transparent);
+  }
+
+  .vibes-canvas-meta {
+    padding: 0.36rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .vibes-canvas-frame {
+    padding: 0.3rem;
+  }
+
+  .vibes-canvas {
+    max-width: calc(100% - 0.3rem);
+    max-height: calc(100% - 0.3rem);
+  }
+
+  .vibes-zoom-bar {
+    grid-template-columns: 30px minmax(70px, 1fr) 30px;
+    gap: 0.35rem;
+    padding: 0.36rem 0.5rem;
+  }
+
+  .vibes-zoom-bar button {
+    width: 30px;
+    height: 28px;
+  }
+
+  .vibes-panel-head,
+  .vibes-history-head {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.62rem;
+  }
+
+  .vibes-tabs button {
+    min-height: 32px;
+    gap: 0.22rem;
+    font-size: 0.6rem;
+  }
+
+  .vibes-control-list,
+  .vibes-control-list.compact,
+  .vibes-channel-panel,
+  .vibes-curve-panel,
+  .vibes-grade-panel,
+  .vibes-mask-panel,
+  .vibes-retouch-panel,
+  .vibes-layer-panel,
+  .vibes-info-panel,
+  .vibes-transform-panel,
+  .vibes-export-panel {
+    grid-template-columns: 1fr;
+    gap: 0.52rem;
+    padding: 0.52rem;
+  }
+
+  .vibes-swatch-grid,
+  .vibes-ratio-grid,
+  .vibes-transform-buttons,
+  .vibes-export-options,
+  .vibes-workspace-actions,
+  .vibes-grade-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vibes-slider-row {
+    gap: 0.28rem;
+  }
+
+  .vibes-slider-row span,
+  .vibes-slider-row strong {
+    font-size: 0.64rem;
+  }
+
+  .vibes-history-list {
+    max-height: 94px;
+  }
+
+  .vibes-filmstrip {
+    gap: 0.35rem;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .vibes-filmstrip button {
+    width: 64px;
+    height: 36px;
+    border-radius: 7px;
+  }
+
+  .vibes-import-tile {
+    font-size: 0.5rem;
+  }
+
+  .vibes-import-tile svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 480px) {
